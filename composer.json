@@ -1,0 +1,25 @@
+{
+    "name": "sakib/my-academy",
+    "description": "Wordpress lerning plugin",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "autoload": {
+        "psr-4": {
+            "Sakib\\MyAcademy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nazmunsakib",
+            "email": "wp.coder3@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload":{
+        "psr-4": {
+            "myacademy\\": "inc/"
+        },
+        "files": []
+    }
+}
