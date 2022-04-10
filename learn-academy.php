@@ -37,7 +37,7 @@ final class My_Academy {
 
 		register_activation_hook( __FILE__, [ $this, 'plugin_active' ] );
 
-		add_action( 'plugin_loaded', [ $this, 'init_plugin' ] );
+		add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
 
 	}
 
@@ -91,6 +91,12 @@ final class My_Academy {
 	 */
 	public function init_plugin() {
 
+		if ( is_admin() ) {
+			new myacademy\Admin();
+		} else {
+			new myacademy\Frontend();
+		}
+
 	}
 
 }
@@ -98,7 +104,7 @@ final class My_Academy {
 /**
  * Inisialize the main plugin
  *
- * @return \My_Academy
+ * @return false|My_Academy
  */
 function my_academy() {
 	return My_Academy::init();
@@ -106,4 +112,3 @@ function my_academy() {
 
 my_academy();
 
-echo ACADEMY_VERSION;
