@@ -3,11 +3,6 @@
     "description": "Wordpress lerning plugin",
     "type": "wordpress-plugin",
     "license": "GPLv2",
-    "autoload": {
-        "psr-4": {
-            "Sakib\\MyAcademy\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "nazmunsakib",
