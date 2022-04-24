@@ -8,13 +8,14 @@ namespace myacademy;
 class Admin {
 
 	function __construct() {
-		$this->dispatch_action();
-		new Admin\Menu();
+		$addressbook = new Admin\Addressbook();
+
+		$this->dispatch_action( $addressbook );
+
+		new Admin\Menu( $addressbook );
 	}
 
-	public function dispatch_action() {
-		$addressbook = new Admin\Addressbook;
-
+	public function dispatch_action( $addressbook ) {
 		add_action( 'admin_init', [ $addressbook, 'form_handler' ] );
 	}
 

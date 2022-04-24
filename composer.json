@@ -15,6 +15,6 @@
         "psr-4": {
             "myacademy\\": "inc/"
         },
-        "files": []
+        "files": ["inc/functions.php"]
     }
 }

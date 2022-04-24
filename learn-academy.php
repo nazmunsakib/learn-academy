@@ -75,13 +75,8 @@ final class My_Academy {
 	 * @return void
 	 */
 	public function plugin_active() {
-		$installed = get_option( 'my_acadamy_isntalled' );
-
-		if ( ! $installed ) {
-			update_option( 'my_acadamy_isntalled', time() );
-		}
-
-		update_option( 'my_acadamy_version', ACADEMY_VERSION );
+		$version = new myacademy\Installer();
+		$version->run();
 	}
 
 	/**
